@@ -32,6 +32,7 @@ function doPost(e) {
   }
 
   if (typeof keyWords === 'undefined') {
+    //雖然是在if區塊中,宣告keyWords變數,但js仍視為全域變數
     var keyWords = ["溫度", "幾度", "熱不熱"];
   }
   else {
@@ -41,6 +42,7 @@ function doPost(e) {
   var returnText;
   var hasKeyword = false;
   
+  //判斷Line傳來的訊息有沒有符合關鍵字
   if (userMessage) {
     for (var i = 0; i < keyWords.length; i++) {
       if (userMessage.indexOf(keyWords[i]) !== -1) {
